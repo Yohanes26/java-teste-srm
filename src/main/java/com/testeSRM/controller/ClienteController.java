@@ -21,7 +21,6 @@ public class ClienteController {
 	@GetMapping
 	@ResponseBody
 	public List<ClienteVO> findAll(){
-		System.out.println("correto");
 		return clienteService.findAll();
 	}
 }

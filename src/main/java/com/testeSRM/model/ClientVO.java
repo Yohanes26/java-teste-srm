@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
-public class ClienteVO {
+public class ClientVO {
 	
 	@Id
 	private String id;
@@ -14,6 +14,7 @@ public class ClienteVO {
 	private String nome;
 	private BigDecimal limiteCredito;
 	private String risco;
+	private BigDecimal juros;
 	
 	public String getId() {
 		return id;
@@ -38,6 +39,12 @@ public class ClienteVO {
 	}
 	public void setRisco(String risco) {
 		this.risco = risco;
+	}
+	public BigDecimal getJuros() {
+		return juros;
+	}
+	public void setJuros(BigDecimal juros) {
+		this.juros = juros;
 	}
 	
 }

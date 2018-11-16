@@ -19,4 +19,9 @@ public class ClienteService {
 	public List<ClienteVO> findAll(){
 		return clienteRepository.findAll();
 	}
+	
+	@Transactional
+	public ClienteVO saveCliente(ClienteVO cliente){
+		return clienteRepository.save(cliente);
+	}
 }

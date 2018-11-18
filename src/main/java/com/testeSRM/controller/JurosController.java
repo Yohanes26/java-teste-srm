@@ -3,6 +3,7 @@ package com.testeSRM.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,13 +24,13 @@ public class JurosController {
 	@CrossOrigin(origins = "https://teste-srm.herokuapp.com")
 	@GetMapping
 	@ResponseBody
-	public List<JurosVO> findAll(){
-		return jurosService.findAll();
+	public ResponseEntity<List<JurosVO>> findAll(){
+		return ResponseEntity.ok(jurosService.findAll());
 	}
 	
 	@CrossOrigin(origins = "https://teste-srm.herokuapp.com")
 	@PostMapping(path = "/save", consumes = "application/json", produces = "application/json")
-	public void saveJuros(@RequestBody JurosVO juros){
-		jurosService.saveJuros(juros);
+	public ResponseEntity<JurosVO> saveJuros(@RequestBody JurosVO juros){
+		return ResponseEntity.ok(jurosService.saveJuros(juros));
 	}
 }

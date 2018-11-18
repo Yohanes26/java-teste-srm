@@ -20,7 +20,7 @@ public class JurosService {
 	}
 	
 	@Transactional
-	public void saveJuros(JurosVO juros){
-		jurosRepository.save(juros);
+	public JurosVO saveJuros(JurosVO juros){
+		return jurosRepository.save(juros);
 	}
 }

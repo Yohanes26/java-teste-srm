@@ -29,8 +29,8 @@ public class JurosController {
 	}
 	
 	@CrossOrigin(origins = "https://teste-srm.herokuapp.com")
-	@PostMapping(path = "/save", consumes = "application/json", produces = "application/json")
-	public ResponseEntity<JurosVO> saveJuros(@RequestBody JurosVO juros){
-		return ResponseEntity.ok(jurosService.saveJuros(juros));
+	@PostMapping(path = "/salvar", consumes = "application/json", produces = "application/json")
+	public ResponseEntity<JurosVO> salvarJuros(@RequestBody JurosVO juros){
+		return ResponseEntity.ok(jurosService.salvarJuros(juros));
 	}
 }

@@ -2,7 +2,7 @@ package com.testeSRM.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.testeSRM.model.ClientVO;
+import com.testeSRM.model.ClienteVO;
 
-public interface ClientRepository extends MongoRepository<ClientVO, String> {
+public interface ClientRepository extends MongoRepository<ClienteVO, String> {
 }

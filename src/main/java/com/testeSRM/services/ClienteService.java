@@ -6,22 +6,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.testeSRM.model.ClientVO;
+import com.testeSRM.model.ClienteVO;
 import com.testeSRM.repository.ClientRepository;
 
 @Service
-public class ClientService {
+public class ClienteService {
 
 	@Autowired
-	private ClientRepository clientRepository;
+	private ClientRepository clienteRepository;
 	
 	@Transactional
-	public List<ClientVO> findAll(){
-		return clientRepository.findAll();
+	public List<ClienteVO> findAll(){
+		return clienteRepository.findAll();
 	}
 	
 	@Transactional
-	public ClientVO saveClient(ClientVO client){
-		return clientRepository.save(client);
+	public ClienteVO salvarCliente(ClienteVO cliente){
+		return clienteRepository.save(cliente);
 	}
 }

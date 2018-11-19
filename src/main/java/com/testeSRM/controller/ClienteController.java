@@ -35,7 +35,7 @@ public class ClienteController {
 	@CrossOrigin(origins = "https://teste-srm.herokuapp.com")
 	@PostMapping(path = "/salvar", consumes = "application/json", produces = "application/json")
 	@ResponseStatus(value = HttpStatus.CREATED)
-	public BodyBuilder saveClient(@RequestBody ClienteVO cliente){
+	public ResponseEntity.BodyBuilder saveClient(@RequestBody ClienteVO cliente){
 		clienteService.salvarCliente(cliente);
 		return ResponseEntity.status(HttpStatus.CREATED);
 	}

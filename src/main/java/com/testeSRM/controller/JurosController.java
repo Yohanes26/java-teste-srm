@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import com.testeSRM.model.ClienteVO;
 import com.testeSRM.model.JurosVO;
 import com.testeSRM.services.JurosService;
 
@@ -24,18 +25,17 @@ public class JurosController {
 	@Autowired
 	private JurosService jurosService;
 	
-	@CrossOrigin(origins = "https://teste-srm.herokuapp.com")
+	@CrossOrigin(origins = "*")
 	@GetMapping
 	@ResponseBody
 	public ResponseEntity<List<JurosVO>> findAll(){
 		return ResponseEntity.ok(jurosService.findAll());
 	}
 	
-	@CrossOrigin(origins = "https://teste-srm.herokuapp.com")
+	@CrossOrigin(origins = "*")
 	@PostMapping(path = "/salvar", consumes = "application/json", produces = "application/json")
 	@ResponseStatus(value = HttpStatus.CREATED)
-	public BodyBuilder salvarJuros(@RequestBody JurosVO juros){
-		jurosService.salvarJuros(juros);
-		return ResponseEntity.status(HttpStatus.CREATED);
+	public ResponseEntity<JurosVO> salvarJuros(@RequestBody JurosVO juros){
+		return ResponseEntity.ok(jurosService.salvarJuros(juros));
 	}
 }

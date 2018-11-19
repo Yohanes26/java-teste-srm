@@ -67,6 +67,6 @@ public class JurosControllerTest {
 
 		/*mockMvc.perform(post("/juros/salvar")
         .contentType(MediaType.APPLICATION_JSON)
-        .content(asJsonString(initJurosVO()))).andExpect(status().isCreated());*/
+        .content(asJsonString(initJurosVO()))).andExpect(status().isOk());*/
 	}
 }

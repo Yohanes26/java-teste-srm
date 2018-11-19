@@ -25,18 +25,17 @@ public class ClienteController {
 	@Autowired
 	private ClienteService clienteService;
 	
-	@CrossOrigin(origins = "https://teste-srm.herokuapp.com")
+	@CrossOrigin(origins = "*")
 	@GetMapping
 	@ResponseBody
 	public ResponseEntity<List<ClienteVO>> findAll(){
 		return ResponseEntity.ok(clienteService.findAll());
 	}
 
-	@CrossOrigin(origins = "https://teste-srm.herokuapp.com")
+	@CrossOrigin(origins = "*")
 	@PostMapping(path = "/salvar", consumes = "application/json", produces = "application/json")
 	@ResponseStatus(value = HttpStatus.CREATED)
-	public ResponseEntity.BodyBuilder saveClient(@RequestBody ClienteVO cliente){
-		clienteService.salvarCliente(cliente);
-		return ResponseEntity.status(HttpStatus.CREATED);
+	public ResponseEntity<ClienteVO> saveClient(@RequestBody ClienteVO cliente){
+		return ResponseEntity.ok(clienteService.salvarCliente(cliente));
 	}
 }

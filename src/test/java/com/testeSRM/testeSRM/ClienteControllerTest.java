@@ -75,6 +75,6 @@ public class ClienteControllerTest {
 	public void testSalvarCliente() throws Exception {	
 		mockMvc.perform(post("/cliente/salvar")
         .contentType(MediaType.APPLICATION_JSON)
-        .content(asJsonString(initClienteVO()))).andExpect(status().isCreated());
+        .content(asJsonString(initClienteVO()))).andExpect(status().isOk());
 	}
 }

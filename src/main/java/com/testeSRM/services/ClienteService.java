@@ -7,13 +7,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.testeSRM.model.ClienteVO;
-import com.testeSRM.repository.ClientRepository;
+import com.testeSRM.repository.ClienteRepository;
 
 @Service
 public class ClienteService {
 
 	@Autowired
-	private ClientRepository clienteRepository;
+	private ClienteRepository clienteRepository;
 	
 	@Transactional
 	public List<ClienteVO> findAll(){

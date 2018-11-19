@@ -3,7 +3,9 @@ package com.testeSRM.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.ResponseEntity.BodyBuilder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.testeSRM.model.JurosVO;
 import com.testeSRM.services.JurosService;
@@ -30,7 +33,9 @@ public class JurosController {
 	
 	@CrossOrigin(origins = "https://teste-srm.herokuapp.com")
 	@PostMapping(path = "/salvar", consumes = "application/json", produces = "application/json")
-	public ResponseEntity<JurosVO> salvarJuros(@RequestBody JurosVO juros){
-		return ResponseEntity.ok(jurosService.salvarJuros(juros));
+	@ResponseStatus(value = HttpStatus.CREATED)
+	public BodyBuilder salvarJuros(@RequestBody JurosVO juros){
+		jurosService.salvarJuros(juros);
+		return ResponseEntity.status(HttpStatus.CREATED);
 	}
 }

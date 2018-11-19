@@ -62,9 +62,11 @@ public class JurosControllerTest {
 	}
 	
 	@Test
-	public void testSalvarCliente() throws Exception {	
-		mockMvc.perform(post("/juros/salvar")
+	public void testSalvarCliente() throws Exception {
+		// Comentado para evitar de rodar os testes e gravar mais dados na tabela.
+
+		/*mockMvc.perform(post("/juros/salvar")
         .contentType(MediaType.APPLICATION_JSON)
-        .content(asJsonString(initJurosVO()))).andExpect(status().isCreated());
+        .content(asJsonString(initJurosVO()))).andExpect(status().isCreated());*/
 	}
 }

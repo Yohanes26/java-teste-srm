@@ -50,10 +50,10 @@ public class ClienteControllerTest {
 
 	public ClienteVO initClienteVO() {
 		ClienteVO clienteVO = new ClienteVO();
-		clienteVO.setNome("Yohanes");
-		clienteVO.setLimiteCredito(new BigDecimal(20.00));
-		clienteVO.setRisco("C");
-		clienteVO.setJuros(new BigDecimal(30));
+		clienteVO.setNome("Yohanes Lopes");
+		clienteVO.setLimiteCredito(new BigDecimal(200000));
+		clienteVO.setRisco("A");
+		clienteVO.setJuros(new BigDecimal(0));
 
 		return clienteVO;
 	}
